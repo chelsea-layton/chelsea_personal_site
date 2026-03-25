@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Poppins } from "next/font/google";
+import { FaviconDebugProbe } from "./favicon-debug-probe";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -44,6 +45,7 @@ export default function RootLayout({
         className="antialiased font-sans min-h-dvh overflow-x-clip pb-[env(safe-area-inset-bottom)]"
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
       >
+        <FaviconDebugProbe />
         {children}
       </body>
     </html>
