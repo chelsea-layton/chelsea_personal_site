@@ -1,0 +1,3 @@
+{"sessionId":"90bc9f","runId":"local-prod-verify","hypothesisId":"H4","location":"middleware.ts:middleware","message":"request hit middleware before route handling","data":{"pathname":"/","host":"localhost:3001"},"timestamp":1774479442235}
+{"sessionId":"90bc9f","runId":"local-prod-verify","hypothesisId":"H4","location":"middleware.ts:middleware","message":"request hit middleware before route handling","data":{"pathname":"/","host":"localhost:3999"},"timestamp":1774480620819}
+{"sessionId":"90bc9f","runId":"local-prod-verify","hypothesisId":"H4","location":"middleware.ts:middleware","message":"request hit middleware before route handling","data":{"pathname":"/","host":"127.0.0.1:3999"},"timestamp":1774480622416}
