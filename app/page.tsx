@@ -1,3 +1,5 @@
+'use use client';
+
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
