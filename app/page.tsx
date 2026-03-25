@@ -1,4 +1,4 @@
-'use use client';
+'use client';
 
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
