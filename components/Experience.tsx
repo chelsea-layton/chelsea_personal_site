@@ -56,11 +56,11 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-24 px-6"
+      className="py-16 md:py-24 px-4 sm:px-6"
       style={{ borderTop: "1px solid var(--border)" }}
     >
       <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-[200px_1fr] gap-12 md:gap-16">
+        <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12 lg:gap-16">
           <FadeIn>
             <h2 className="section-label pt-1">Experience</h2>
           </FadeIn>
@@ -68,7 +68,7 @@ export default function Experience() {
           <div className="space-y-12">
             {experience.map((job, i) => (
               <FadeIn key={i} delay={i * 60}>
-                <div className="grid sm:grid-cols-[1fr_auto] gap-4">
+                <div className="grid sm:grid-cols-[1fr_auto] gap-3 sm:gap-4">
                   <div>
                     <h3
                       className="text-sm font-medium mb-0.5"
@@ -96,7 +96,7 @@ export default function Experience() {
                     </ul>
                   </div>
                   <p
-                    className="text-xs whitespace-nowrap sm:text-right mt-0.5"
+                    className="text-xs sm:text-right sm:whitespace-nowrap mt-0.5 text-pretty"
                     style={{ color: "var(--muted)" }}
                   >
                     {job.period}

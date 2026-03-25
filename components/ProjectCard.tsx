@@ -33,7 +33,7 @@ export default function ProjectCard({ repo, caption }: ProjectCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${repo.name} — opens on GitHub in new tab`}
-      className="group block p-6 transition-colors duration-150"
+      className="group block p-5 sm:p-6 transition-colors duration-150 touch-manipulation active:opacity-90 min-h-[100%]"
       style={{
         backgroundColor: "var(--background)",
         border: "1px solid var(--border)",

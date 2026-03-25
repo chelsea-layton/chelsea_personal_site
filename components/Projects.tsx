@@ -23,9 +23,13 @@ export default async function Projects() {
   const displayed = sorted.slice(0, 9);
 
   return (
-    <section id="projects" className="py-24 px-6" style={{ borderTop: "1px solid var(--border)" }}>
+    <section
+      id="projects"
+      className="py-16 md:py-24 px-4 sm:px-6"
+      style={{ borderTop: "1px solid var(--border)" }}
+    >
       <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-[200px_1fr] gap-12 md:gap-16">
+        <div className="grid md:grid-cols-[200px_1fr] gap-8 md:gap-12 lg:gap-16">
           <FadeIn>
             <div>
               <h2 className="section-label pt-1">Projects</h2>

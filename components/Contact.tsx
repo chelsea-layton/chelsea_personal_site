@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-6"
+      className="py-16 md:py-24 px-4 sm:px-6"
       style={{ borderTop: "1px solid var(--border)" }}
     >
       <div className="max-w-3xl mx-auto text-center">
@@ -14,7 +14,7 @@ export default function Contact() {
 
         <FadeIn delay={50}>
           <h2
-            className="text-3xl sm:text-4xl font-light leading-snug mb-6"
+            className="text-[clamp(1.625rem,5vw,2.25rem)] sm:text-4xl font-light leading-snug mb-6 text-pretty px-1"
             style={{ color: "var(--foreground)" }}
           >
             Get in touch
@@ -32,10 +32,10 @@ export default function Contact() {
         </FadeIn>
 
         <FadeIn delay={150}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
             <a
               href="mailto:hi.chelsea.layton@gmail.com"
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium px-6 py-3 transition-opacity hover:opacity-70"
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium px-6 py-3.5 min-h-11 rounded-sm transition-opacity hover:opacity-70 active:opacity-80 touch-manipulation"
               style={{
                 backgroundColor: "var(--foreground)",
                 color: "var(--background)",
@@ -57,7 +57,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/hichelsea"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium px-6 py-3 transition-opacity hover:opacity-70"
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium px-6 py-3.5 min-h-11 rounded-sm transition-opacity hover:opacity-70 active:opacity-80 touch-manipulation"
               style={{
                 border: "1px solid var(--border)",
                 color: "var(--foreground)",
@@ -79,7 +79,10 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <footer className="max-w-5xl mx-auto mt-24 pt-8 text-center" style={{ borderTop: "1px solid var(--border)" }}>
+      <footer
+        className="max-w-5xl mx-auto mt-16 md:mt-24 pt-8 pb-2 text-center px-2"
+        style={{ borderTop: "1px solid var(--border)" }}
+      >
         <p className="text-xs" style={{ color: "var(--muted)" }}>
           © {new Date().getFullYear()} Chelsea Layton
         </p>

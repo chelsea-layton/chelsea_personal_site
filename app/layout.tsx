@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,13 @@ const poppins = Poppins({
   weight: ["300", "400", "500"],
   variable: "--font-sans",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#FEFCFA",
+};
 
 export const metadata: Metadata = {
   title: "Chelsea Layton — Product Manager",
@@ -33,7 +40,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSerifDisplay.variable} ${poppins.variable}`}>
-      <body className="antialiased font-sans" style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}>
+      <body
+        className="antialiased font-sans min-h-dvh overflow-x-clip pb-[env(safe-area-inset-bottom)]"
+        style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
+      >
         {children}
       </body>
     </html>

@@ -26,17 +26,26 @@ export default function Nav() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [menuOpen]);
+
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-[env(safe-area-inset-top)]"
       style={{
         backgroundColor: scrolled ? "rgba(250,248,245,0.92)" : "transparent",
         backdropFilter: scrolled ? "blur(8px)" : "none",
         borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
       }}
     >
-      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto min-h-14 h-14 flex items-center justify-between pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-[max(1.5rem,env(safe-area-inset-left))] sm:pr-[max(1.5rem,env(safe-area-inset-right))]">
         {/* Name / logo */}
         <a
           href="#"
@@ -52,7 +61,7 @@ export default function Nav() {
             <li key={label}>
               <a
                 href={href}
-                className="text-sm transition-opacity duration-150 hover:opacity-60"
+                className="text-sm transition-opacity duration-150 hover:opacity-60 py-2 touch-manipulation"
                 style={{ color: "var(--accent)" }}
               >
                 {label}
@@ -63,7 +72,8 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-1"
+          type="button"
+          className="md:hidden flex flex-col items-center justify-center gap-1.5 size-11 -me-1 touch-manipulation"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -103,12 +113,12 @@ export default function Nav() {
             borderColor: "var(--border)",
           }}
         >
-          <ul className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
+          <ul className="max-w-5xl mx-auto py-4 flex flex-col gap-1 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-[max(1.5rem,env(safe-area-inset-left))] sm:pr-[max(1.5rem,env(safe-area-inset-right))]">
             {links.map(({ label, href }) => (
               <li key={label}>
                 <a
                   href={href}
-                  className="text-sm"
+                  className="text-sm py-3 block touch-manipulation"
                   style={{ color: "var(--accent)" }}
                   onClick={() => setMenuOpen(false)}
                 >
