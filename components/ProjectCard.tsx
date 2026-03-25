@@ -1,3 +1,5 @@
+"use client";
+
 import type { GitHubRepo } from "@/lib/github";
 
 const languageColors: Record<string, string> = {
