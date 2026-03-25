@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Poppins } from "next/font/google";
+import { siteMetadataBase, siteUrlString } from "@/lib/site";
 import { FaviconDebugProbe } from "./favicon-debug-probe";
 import "./globals.css";
 
@@ -22,17 +23,49 @@ export const viewport: Viewport = {
   themeColor: "#FEFCFA",
 };
 
+const siteTitle = "Chelsea Layton — AI Product Manager";
+const siteDescription =
+  "Chelsea Layton is an AI product manager who ships thoughtful products at the intersection of AI, design, and user behavior.";
+
 export const metadata: Metadata = {
-  title: "Chelsea Layton — Product Manager",
-  description:
-    "Chelsea Layton is a product manager who ships thoughtful products at the intersection of AI, design, and user behavior.",
+  metadataBase: siteMetadataBase(),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Chelsea Layton — Product Manager",
-    description:
-      "Chelsea Layton is a product manager who ships thoughtful products at the intersection of AI, design, and user behavior.",
+    title: siteTitle,
+    description: siteDescription,
     type: "website",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
   },
 };
+
+function PersonJsonLd() {
+  const base = siteUrlString();
+  const githubUser = process.env.GITHUB_USERNAME ?? "chelsea-layton";
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Chelsea Layton",
+    url: base,
+    jobTitle: "AI Product Manager",
+    sameAs: [
+      "https://www.linkedin.com/in/hichelsea",
+      `https://github.com/${githubUser}`,
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
 
 export default function RootLayout({
   children,
@@ -45,6 +78,7 @@ export default function RootLayout({
         className="antialiased font-sans min-h-dvh overflow-x-clip pb-[env(safe-area-inset-bottom)]"
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
       >
+        <PersonJsonLd />
         <FaviconDebugProbe />
         {children}
       </body>

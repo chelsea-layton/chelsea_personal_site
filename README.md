@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Deploy / SEO
+
+- Set **`NEXT_PUBLIC_SITE_URL`** to your live origin (e.g. `https://your-domain.com`, no trailing slash). Used for canonical URLs, Open Graph base, `sitemap.xml`, and `robots.txt`.
+- **Google Search Console**: verify that same domain, submit `https://your-domain.com/sitemap.xml`, optionally request indexing for the homepage.
+- **LinkedIn**: keep the profile public, add your site URL on the profile, and use a consistent name/headline so it aligns with on-site metadata.
+
 ## Getting Started
 
 First, run the development server:
