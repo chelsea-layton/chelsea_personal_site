@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Deploy / SEO
 
-- Set **`NEXT_PUBLIC_SITE_URL`** to your live origin (e.g. `https://your-domain.com`, no trailing slash). Used for canonical URLs, Open Graph base, `sitemap.xml`, and `robots.txt`.
+- Production uses **[`.env.production`](.env.production)** for **`NEXT_PUBLIC_SITE_URL`** (canonical origin, no trailing slash) so Vercel picks it up on every build without dashboard setup. You can still override in the Vercel UI if needed.
 - **Google Search Console**: verify that same domain, submit `https://your-domain.com/sitemap.xml`, optionally request indexing for the homepage.
 - **LinkedIn**: keep the profile public, add your site URL on the profile, and use a consistent name/headline so it aligns with on-site metadata.
 
