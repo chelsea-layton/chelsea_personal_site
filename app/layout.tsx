@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Poppins } from "next/font/google";
 import { siteMetadataBase, siteUrlString } from "@/lib/site";
-import { FaviconDebugProbe } from "./favicon-debug-probe";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -79,7 +78,6 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
       >
         <PersonJsonLd />
-        <FaviconDebugProbe />
         {children}
       </body>
     </html>
