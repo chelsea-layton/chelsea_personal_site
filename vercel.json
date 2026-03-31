@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/kinderToFirstSummerPlan2026/:path*",
+      "destination": "https://kinder-to-first-summer-plan-2026.vercel.app/:path*"
+    }
+  ]
+}
